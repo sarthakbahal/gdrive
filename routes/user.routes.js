@@ -85,9 +85,9 @@ router.post('/login',
   
     )
 
-    res.json({
-      token
-    })
+    res.cookie('token', token);
+
+    res.send('Login successful!');
 
   }
 )
