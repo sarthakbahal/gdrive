@@ -3,6 +3,7 @@ const userRouter = require('./routes/user.routes');
 const dotenv = require('dotenv');
 const connectToDB = require('./config/db');
 const cookieParser = require('cookie-parser');
+const indexRouter = require('./routes/index.routes');
 
 
 
@@ -18,6 +19,7 @@ app.use(cookieParser());
 
 app.set('view engine', 'ejs');
 
+app.use('/', indexRouter);
 app.use('/user', userRouter);
 
 
